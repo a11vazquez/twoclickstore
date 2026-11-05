@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="apple store two click">
+
+    <!-- Vizualizacion al compartir link-->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="two click apple store">
+    <meta property="og:description" content="tu producto apple a dos clicks de distancia">
+
+    <!-- Nombre del dominio publico e imagen de portada al compartir(dbee ser publica online no salir desde del proyecto).
+    <meta property="og:url" content="https://tudominio.com/">
+    <meta property="og:image" content="https://tudominio.com/img/imagen.jpg">
+    -->
+
+    <!-- CSS-->
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+
+    <!-- My Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+
+    <title>Two Click</title>
+</head>
+
+<body>
+    <header>
+        <p>Two Click!</p>
+        <div class="header-info">
+            <ion-icon class="ham-btn" id="ham-btn" name="menu-outline"></ion-icon>
+            <nav id="navbar">
+                <ion-icon class="ham-close" id="ham-close" name="close-outline"></ion-icon>
+                <ul>
+                    <li><a href="#categorys">Productos</a></li>
+                    <li><a href="#footer">Redes</a></li>
+                    <li><a href="#map">Donde Estamos</a></li>
+                </ul>
+            </nav>
+            <a class="cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M4 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path d="M15 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path d="M17 17h-11v-14h-2" />
+                    <path d="M6 5l14 1l-1 7h-13" />
+                </svg>
+                <span id="cart-counter" class="cart-index">0</span>
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Two Click!</h1>
+                <p>Compra tu producto Apple en dos clicks</p>
+                <h2>Agregá, señá y buscá.</h2>
+
+                <a href="#container" class="hero-btn">Ver Productos</a>
+            </div>
+        </section>
+
+        <section id="categorys" class="category-products">
+            <h3>Elige Tu Categoria</h3>
+            <article class="filter-category-products">
+                <button type="button" class="category-products_card" data-category="airpods">
+                    <img src="src/images/categorys/card-airpods.png" alt="productos airpods">
+                    <a href="javascript:void(0)">AirPods</a>
+                </button>
+
+                <button type="button" class="category-products_card" data-category="iphone">
+                    <img src="src/images/categorys/card-iphone.png" alt="productos iphone">
+                    <a href="javascript:void(0)">Iphone</a>
+                </button>
+                <button type="button" class="category-products_card" data-category="ipad">
+                    <img src="src/images/categorys/card-ipad.png" alt="productos ipad">
+                    <a href="javascript:void(0)">Ipad</a>
+                </button>
+
+                <button type="button" class="category-products_card" data-category="mac">
+                    <img src="src/images/categorys/card-mac.png" alt="productos mac">
+                    <a href="javascript:void(0)">Mac</a>
+                </button>
+
+                <button type="button" class="category-products_card" data-category="all">
+                    <img src="src/images/categorys/card-all.png" alt="todos los productos">
+                    <a href="javascript:void(0)">Todos</a>
+                </button>
+
+            </article>
+        </section>
+
+        <div class="container-orderBy">
+            <div class="container-orderBy_btns">
+                <button class="order-btn" id="sort-price-btn">Precio Mayor</button>
+                <button class="order-btn" id="sort-price-lower-btn">Precio Menor</button>
+                <button class="order-btn" id="sort-normal-btn">Normal</button>
+            </div>
+
+            <div class="section-search-product">
+                <p>Buscar Producto :</p>
+                <input type="text" id="filter-input" class="input-search-product" placeholder="Escriba Aqui..">
+
+            </div>
+
+        </div>
+
+        <section id="container" class="container">
+
+        </section>
+        <!-- <section class="list" id="product-list">
+
+        </section> -->
+
+        <aside class="cart-container" id="viewCart">
+            <h2>Carrito</h2>
+
+            <div class="cart-product-info">
+                <ul id="cart-ul">
+                    <li>No hay productos</li>
+                </ul>
+            </div>
+
+            <div class="cart-total-price">
+                <strong>Total : <span id="cart-total_price">$0.00</span></strong>
+                <button class="btn-clean-cart" onclick="cleanCart()">Vaciar Carrito</button>
+            </div>
+        </aside>
+        <article class="buy-section">
+            <h3>¿Con que moneda queres abonar?</h3>
+            <p>Selecciona para convertir el precio y continuar!</p>
+            <div class="buy-section_btns">
+                <button class="buy-btns btn-dolar">Dolares</button>
+                <button class="buy-btns btn-pesos">Pesos Argentinos</button>
+            </div>
+
+            <div class="pay-section_pesos">
+                <h4 class="pay-cotizacion">Cotizacion Final $<span class="pesos-price"> </span> pesos</h4>
+                <p class="pay-cotizacion">Calculado en base a cotizacion <strong>dolar blue</strong> precio compra de
+                    <strong>$<span class="bluePrice"> </span></strong> a la fecha de <span
+                        class="fechaCotizacion"><strong>08/08/2026</strong></span>
+                </p>
+                <p class="pay-cotizacion"></p>
+            </div>
+            <div class="pay-section_dolar">
+                <h4>Cotizacion Final <strong>$<span class="dolar-price"> </span></strong> USD</h4>
+            </div>
+
+            <div class="buy-form-section hidden">
+                <p>Solo estas a un paso de completar tu compra</p>
+                <form class="contact-form">
+
+                    <div class="form-name-info">
+
+
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" placeholder="Escriba Su Nombre.."
+                                autocomplete="given-name">
+
+
+                            <label for="lastname">Apellido</label>
+                            <input type="text" id="lastname" name="lastname" placeholder="Escriba Su apellido.."
+                                autocomplete="family-name">
+                        </div>
+
+
+                        <div class="form-info">
+
+
+                            <label for="phone">Número telefónico</label>
+                            <input type="number" id="phone" name="phone" placeholder="Tu número" autocomplete="tel">
+
+
+
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="example@gmail.com"
+                                autocomplete="email">
+                        </div>
+
+                    </div>
+                    <button type="submit" class="form-btn">Confirmar Compra</button>
+                </form>
+            </div>
+
+
+            </div>
+        </article>
+        <section class="sucessfull-purchase hidden">
+            <ion-icon class="icon-sucessfull" name="checkmark-outline"></ion-icon>
+            <div>
+                <h2>¡Compra exitosa!</h2>
+                <p>Tu compra se realizó correctamente.</p>
+                <p>Retira tu pedido presentando tu ticket en nuestra socursal mas cercana</p>
+            </div>
+        </section>
+        <div class="map" id="map">
+            <p>Encuentranos Aqui</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52580.8860962046!2d-58.564294751367164!3d-34.54582260000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6c0f8ef317f%3A0xed0040340d229f38!2sOneClick%20Dot%20Baires%20Shopping!5e0!3m2!1ses!2sar!4v1789750000338!5m2!1ses!2sar"
+                width="600" height="450" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">></iframe>
+        </div>
+        </section>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-container">
+
+            <div class="footer-column footer-info">
+                <h3>Two Click!</h3>
+                <p>Todo lo que necesitás, en un solo lugar.</p>
+            </div>
+            <article class="footer-links">
+
+                <div class="footer-column">
+                    <h3>Nuestras redes</h3>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">TikTok</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Descargá nuestra app</h3>
+                    <a href="#">Apple Store</a>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 TWO CLICK! Apple Store</p>
+            <p>By <a href="">Zeda Dev</a></p>
+            <p>See code <a href="">here</a></p>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
