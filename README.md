@@ -11,6 +11,7 @@ Link directo : [TwoClickStore](https://avtwoclickstore.vercel.app/)
 
 ## Características
 
+- **Responsive:** totalmente adaptable a celulares y, otras pantallas.
 - **Visualización de productos:** Obtención dinámica de productos mediante solicitudes Fetch a una API REST.
 - **Búsqueda por nombre:** Campo de búsqueda para encontrar productos según su nombre.
 - **Contador del carrito:** Actualización dinámica de la cantidad de productos agregados al carrito.
@@ -27,3 +28,41 @@ Consume una API REST desarrollada con Node.js y Express, encargada de gestionar 
 **Repositorio Backend:** [Two Click - Admin Backend](https://github.com/a11vazquez/admin-backend)
 
 **API REST:** https://two-click-panel-admin.vercel.app
+
+---
+
+# Screenshots
+
+## Inicio
+
+![inicio](docs/screenshots/inicio.jpg)
+
+---
+## Productos
+
+![Productos](docs/screenshots/productos.jpg)
+
+---
+## Carrito
+
+![Carrito](docs/screenshots/carrito.jpg)
+
+---
+## Venta
+
+![Venta](docs/screenshots/compra.jpg)
+
+---
+## Venta Exitosa
+
+![Venta Exitosa](docs/screenshots/compra-exitosa.jpg)
+
+---
+## TICKET PDF
+
+![TICKET](docs/screenshots/ticket-pdf.jpg)
+
+---
+## FOOTER
+
+![FOOTER](docs/screenshots//footer.jpg)
