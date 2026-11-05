@@ -9,6 +9,14 @@ Link directo : [TwoClickStore](https://avtwoclickstore.vercel.app/)
 - https://avtwoclickstore.vercel.app/
 ---
 
+**Repositorio Backend:** [Two Click - Backend](https://github.com/a11vazquez/admin-backend)
+
+**API REST:** [Two Click API](https://two-click-panel-admin.vercel.app)
+
+- https://two-click-panel-admin.vercel.app/api/products
+
+---
+
 ## Características
 
 - **Responsive:** totalmente adaptable a celulares y, otras pantallas.
